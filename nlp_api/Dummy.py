@@ -88,16 +88,16 @@ def foo():
         obj=response.json()
         # print(response.json())
         print(obj['Correct_Rules'])
-        return render_template("example.html",Rule=obj)
+        return render_template("index.html",Rule=obj)
     else:
-        return render_template("example.html")
+        return render_template("index.html")
 
 
 @app.route('/',methods=['POST','GET'])
 def Word_correction():
     
   
-    return render_template("example.html")
+    return render_template("index.html")
 
 # def createObject(obj):
 
@@ -138,14 +138,14 @@ def Add_to_dictionary():
     else:
         print("sorry")
     print(bol)
-    return render_template("example.html",boll=bol)
+    return render_template("index.html",boll=bol)
 # word prediction
 @app.route("/word_predict",methods=['POST','GET'])
 def word_predict():
     Word=request.form['wordP']
     Word=remove(Word)
     Word=CheckSpell(Word)
-    return render_template("example.html",word=Word)
+    return render_template("index.html",word=Word)
 #  for sample purpose
 # import flask import after_this_request
 @app.route("/new/<name>",methods=['POST','GET'])
@@ -194,8 +194,8 @@ def textParser():
         # textL=word.split()
         print(actual_data)
         # print(error_data)
-        return render_template("example.html",actualD=actual_data,errorD=error_data)
-     return render_template("example.html")
+        return render_template("index.html",actualD=actual_data,errorD=error_data)
+     return render_template("index.html")
 
 
 if __name__=="__main__":
