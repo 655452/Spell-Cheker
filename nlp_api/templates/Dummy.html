@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Editor</title>
+  <style>
+    #editor {
+      background: linear-gradient(45deg,blue,rgb(240, 30, 65));
+      color: white;
+      font-size: bold;
+      font-weight: 700;
+      height: 60vh;
+      width: 80%;
+      border-radius: 0px 0px 25px 25px;
+      padding: 20px;
+    }
+
+    body,
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      /* background: linear-gradient(45deg, rgb(104, 6, 102), rgb(29, 74, 74)); */
+      /* background: linear-gradient(45deg,rgb(61, 56, 56),rgb(44, 44, 88)); */
+      background: linear-gradient(90deg,black,rgb(1, 65, 71));
+    }
+
+    .wrap {
+      border-radius: 25px 25px 0px 0px;
+      border-bottom: 3px solid black;
+      margin-top: 4vh;
+      width: 82%;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 5px;
+      justify-content: space-evenly;
+      background-color: white;
+
+    }
+
+    .wrap>button,
+    .wrap>form>button,
+    .wrap>input {
+      padding: 10px 20px;
+      margin-top: 15px;
+      /* color: white; */
+      border-left: 2px solid black;
+      border-right: 2px solid black;
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      border-radius: 5px;
+      font-size: bold;
+      font-weight: 800;
+
+      /* background: linear-gradient(45deg,rgb(90, 90, 251),rgb(134, 134, 237)); */
+
+    }
+
+    .wrap>button:hover,
+    .wrap>form>button:hover,
+    .wrap>input:hover {
+      background-color: rgb(116, 112, 112);
+
+    }
+
+    .wrap>input {
+      width: 20%;
+      padding: 10px 10px;
+    }
+
+    .tag {
+      padding: 50px;
+      font-size: 50px;
+      color: white;
+      width: 60%;
+      height: 100px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border-radius: 346px 356px 222px 278px;
+      /* background: linear-gradient(45deg, pink, rgb(231, 58, 139)); */
+      background: linear-gradient(90deg,black,rgb(6, 99, 108));
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 0px 50px 20px 50px;
+      background: linear-gradient(45deg, green, yellow);
+    }
+
+    form {
+      width: 100%;
+
+    }
+
+    /*  */
+    #predict {
+      /* transform: translateY(550%) translateX(150%); */
+      /* border: 2px solid black; */
+      width: auto;
+      height: auto;
+      font-size: bold;
+      font-weight: 800;
+      border-radius: 25px;
+      padding: 20px;
+      background: white;
+    }
+
+    #predict>option {
+      padding: 7px;
+      text-decoration: none;
+      font-size: bold;
+    }
+
+    #predict>option:hover {
+      background-color: gray;
+    }
+
+    #text1,#text2 {
+      width: 80%;
+      height: auto;
+      background-color: white;
+      /* background: linear-gradient(45deg,blue,red); */
+      padding: 20px;
+      border-radius: 20px;
+      color: black;
+      font-size: bold;
+      word-spacing: 30px;
+    }
+
+    @media only screen and (max-width: 836px) {
+      .wrap {
+        width: 90%;
+      }
+    }
+
+    /* for correction boxex */
+    .box_wrap{
+      display: flex;
+      width: 80%;
+      padding: 0px 30px;
+    }
+
+    .first,
+    .second {
+      width: 50%;
+    }
+    @media only screen and (max-width: 836px) {
+      .first,
+    .second {
+      width: 90%;
+      margin: 0px auto;
+    }
+    .box_wrap{
+      display: block;
+      
+    }
+    }
+  </style>
+</head>
+
+<body  >
+<!--  
+  {%if word %}
+    <select onclick="changeText()" id="predict" name="words">
+      <option value="Suggessions"></option>
+      {% for i in word: %}
+      <option selected value={{i}}>{{i}}</option>
+  
+      {%endfor%}
+  
+    </select>
+    {%endif%} -->
+  
+  <h1 class="tag">Spell Checker <div class="icon"></div>
+  </h1>
+  <!-- predict word start here -->
+ 
+<!-- predict end -->
+ 
+  <div class="wrap">
+
+    {%if word %}
+    <select onclick="changeText()" id="predict" name="words">
+      
+      {% for i in word: %}
+      <option selected value={{i}}>{{i}}</option>
+  
+      {%endfor%}
+  
+    </select>
+    {%endif%}
+    <!-- <button id="copy-btn" onclick="copyText()">Copy</button>
+    <button id="paste-btn" onclick="pasteText()">Paste</button> -->
+    <input type="file" id="file-input">
+    <button id="upload-btn" onclick="uploadFile()">Upload</button>
+    <!-- <button form="a-form" type="submit">Submit</button> -->
+    <button form="a-form" style="font-weight:800;margin-top:10px;padding:10px 20px;border-radius: 20px;background-color: rgb(77, 232, 123);" type="submit">Submit</button>
+    <button id="Show_add" form="Add_dic" type="submit">&#9960;</button>
+    <form id="Add_dic"
+      style="width:200px;padding:10px;color: white;font-size:bold; border-radius: 20px;margin-top: 20px;"
+      action="http://127.0.0.1:5000/add_to_dict" method="post">
+      <label for="">Add to Dictionary</label>
+      <input type="text" id='Add_D' name="Add_D">
+      {%if boll==0%}
+      <span style=" font-weight:800; margin-top:10px;color: rgb(231, 3, 3);">&times;Sorry try again</span>
+      {%endif%}
+      {%if boll==1%}
+      <span style="font-weight:800; margin-top:10px;color: green;">&#9745;Added Successfully</span>
+      {%endif%}
+
+    </form>
+<!-- word predict -->
+<!-- <hr> -->
+  
+
+
+
+
+
+  </div>
+  <form id="a-form" action="http://127.0.0.1:5000" method="post">
+
+
+    <textarea   id="editor" name="Word">
+
+
+  </textarea>
+
+
+
+
+  </form>
+  <br>
+  <!-- predict box -->
+  <hr>
+  <div style="width:100%;display: flex;justify-content: space-evenly;">
+    <form  id="word_predict"
+    style="width:200px;padding:10px;color: white;font-size:bold; border-radius: 20px;margin-top: 20px;"
+    action="http://127.0.0.1:5000/word_predict" method="post">
+    <label for="">Predict Word</label>
+    <input type="text" id='Add_D' name="wordP">
+    <button style="font-weight:800;margin-top:10px;padding:10px 20px;border-radius: 20px;background-color: rgb(77, 232, 123);" type="submit">Submit</button>
+  
+  </form>
+
+  <!-- <form  id="word_predict"
+    style="width:200px;padding:10px;color: white;font-size:bold; border-radius: 20px;margin-top: 20px;"
+    action="http://127.0.0.1:5000/foo" method="post">
+    <label for="">Rules</label>
+    <input type="text"  name="Rules">
+    <button style="font-weight:800;margin-top:10px;padding:10px 20px;border-radius: 20px;background-color: rgb(77, 232, 123);" type="submit">Submit</button>
+    {{Rule['Correct_Rules']}}
+  
+  </form> -->
+  </div>
+  <!-- predict box end -->
+
+  <div  class="box_wrap" >
+    <div  class="first">
+      <h1 style="font-size:45px; color:white;">Error corection and Detection</h1>
+
+      <div  id="text1" onmousemove="selecting()" >
+         {% set count=0 %}
+        {%for i in text%}
+
+        {%if i[0]==1%}
+        {{i[1]}}
+        
+        {%endif%}
+        {%if i[0]==0%}
+
+        
+          <!-- <span type="submit" style="color: red;">{{i[1]}} -->
+            <select   style=" color: red;border:2px solid white;"  name="words">
+              {% for j in option_for_error[count] %}
+              
+              <option selected="true"  value={{j}}>{{j}}</option>
+              
+              {%endfor%}</select>
+            </span>
+        
+        
+        {%endif%}
+
+        {% set count=count+1%}
+        {%endfor%}
+
+
+
+      </div>
+    </div>
+    <!-- correction box -->
+    <div class="second">
+      <h1 style="font-size:45px; color:white;">rulebased learning</h1>
+      <div id="text2" onmousemove="selecting()" >
+
+        {%for i in correctW%}
+
+        {%if i[0]==1%}
+        {{i[1]}}
+        {%endif%}
+        {%if i[0]==2%}
+
+        <span style="color: rgb(0, 255, 17);">{{i[1]}}</span>
+        {%endif%}
+
+        {%endfor%}
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    function selecting(){
+      let text1=document.getElementById("text1")
+      let text2=document.getElementById("text2")
+      text2.innerHTML=""
+      text2.innerHTML=text1.innerHTML
+      console.log(text1.innerHTML,text2.innerHTML)
+    }
+
+// x and y axis 
+function showCoordinates(event){
+  let x=event.clientX;
+  let y=event.clientY;
+  console.log(x,y)
+let predict=document.getElementById("predict")
+
+predict.style.transform=`translate(${x-700}%,${y+600}%)`;
+console.log(predict.style.transform)
+
+}
+
+    let Add_d = document.getElementById("Add_D")
+    Add_d.addEventListener("mouseout", () => {
+      let editor = document.getElementById("editor");
+
+      Add_d.value = editor.value
+    })
+
+    // function copyText() {
+    //   let editor = document.getElementById("editor");
+    //   // editor.select();
+    //   editor.select();
+    //   navigator.clipboard.writeText(editor.value);
+    //   // alert("Copied text is "+editor.value)
+    //   // document.execCommand("copy");
+    // }
+
+  //  async function pasteText() {
+      
+  //     let editor = document.getElementById("editor");
+  //     // editor.focus();
+  //     const text=await navigator.clipboard.readText()
+  //     editor.value+=text
+  //     // console.log(text)
+  //     // document.execCommand("paste");
+  //   }
+
+    function uploadFile() {
+      let input = document.getElementById("file-input");
+      let file = input.files[0];
+      let reader = new FileReader();
+
+
+      reader.onloadend = function () {
+        let editor = document.getElementById("editor");
+        editor.innerText = reader.result;
+      }
+      if (file) {
+        reader.readAsText(file);
+      }
+
+    }
+
+    function changeText() {
+      let select = document.getElementById('predict')
+      let obj = document.getElementById('editor')
+      obj.value = select.value
+    }
+    function upadate() {
+      let text = document.getElementById('text')
+      let obj = document.getElementById('editor')
+      obj.value = text.innerText
+    }
+  </script>
+</body>
+
+</html>

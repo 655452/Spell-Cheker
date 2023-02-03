@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Editor</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+  
+
+  
+</head>
+
+<body>
+  
+
+  <h1 class="tag"><div class="icon" ><?xml version="1.0" standalone="no"?>
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
+     "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+    <svg style="border-radius:50px 20px 0px 20px ;background:linear-gradient(45deg,yellow,green) " version="1.0" xmlns="http://www.w3.org/2000/svg"
+     width="180px" height="180px" viewBox="0 0 1080.000000 1080.000000"
+     preserveAspectRatio="xMidYMid meet">
+    
+    <g transform="translate(0.000000,1080.000000) scale(0.100000,-0.100000)"
+    fill="#000000" stroke="none">
+    <path d="M0 5400 l0 -5400 5400 0 5400 0 0 5400 0 5400 -5400 0 -5400 0 0
+    -5400z m7185 3609 c28 -1 158 2 290 6 208 6 271 4 468 -14 456 -43 774 -119
+    1052 -250 110 -53 243 -146 293 -207 253 -304 -14 -616 -685 -799 -203 -56
+    -460 -95 -795 -121 l-78 -6 0 -1719 0 -1719 -160 0 -160 0 0 1719 0 1719 -87
+    6 c-49 4 -142 11 -208 17 l-120 11 -364 -101 c-201 -55 -366 -100 -367 -98 -1
+    1 38 69 87 150 49 81 89 152 89 156 0 5 -42 23 -92 40 -374 129 -603 326 -603
+    517 0 114 82 239 216 330 l71 49 -1458 3 c-801 1 -1458 1 -1460 -1 -1 -1 15
+    -38 37 -82 81 -165 74 47 74 -2320 l0 -2110 -160 0 -160 0 4 1858 3 1857 -496
+    0 c-395 0 -503 3 -529 14 -50 21 -95 78 -103 133 -12 83 3 350 25 435 66 254
+    261 445 524 513 l92 24 2355 -4 c1295 -2 2378 -5 2405 -6z m-1218 -1625 c54
+    -40 75 -83 71 -142 -5 -56 -25 -91 -72 -126 -27 -21 -37 -21 -646 -21 -612 0
+    -619 0 -647 21 -89 66 -99 179 -21 251 12 12 34 26 48 32 16 6 242 9 632 8
+    598 -2 607 -2 635 -23z m-3652 -523 c48 -23 299 -274 315 -314 25 -69 -1 -138
+    -69 -184 -37 -25 -107 -31 -144 -12 -31 16 -286 269 -303 301 -22 41 -18 109
+    9 149 23 35 96 79 132 79 11 0 38 -9 60 -19z m6295 -3 c58 -30 90 -78 90 -135
+    0 -24 -6 -56 -14 -71 -17 -32 -272 -285 -303 -301 -66 -33 -169 4 -203 74 -44
+    90 -26 126 141 292 176 174 200 185 289 141z m-2170 -274 c58 -34 82 -79 78
+    -145 -5 -65 -32 -109 -82 -133 -31 -14 -139 -16 -1118 -16 -1035 0 -1085 1
+    -1118 19 -52 27 -80 74 -80 135 0 81 45 138 123 156 17 5 511 7 1097 7 1055
+    -2 1065 -2 1100 -23z m-4069 -727 c99 -65 98 -208 -1 -270 -32 -20 -50 -22
+    -230 -25 -187 -3 -197 -2 -240 20 -25 13 -55 38 -67 57 -52 77 -13 193 77 233
+    8 4 108 7 221 7 198 1 207 0 240 -22z m6538 2 c58 -33 76 -65 76 -136 0 -74
+    -20 -107 -85 -140 -41 -21 -57 -23 -231 -23 -175 0 -188 1 -230 23 -84 45
+    -109 142 -58 225 40 67 61 72 288 72 187 0 206 -2 240 -21z m-2942 -85 c54
+    -40 75 -83 71 -142 -6 -64 -29 -99 -88 -129 l-44 -23 -586 0 -586 0 -44 23
+    c-58 29 -90 77 -90 134 0 67 40 128 100 152 16 6 242 9 632 8 598 -2 607 -2
+    635 -23z m-3417 -684 c51 -26 82 -72 87 -129 6 -64 -10 -88 -164 -245 -143
+    -145 -175 -165 -247 -152 -78 15 -144 110 -130 189 5 35 26 60 143 180 75 76
+    152 147 171 158 46 24 92 24 140 -1z m5851 -8 c24 -16 101 -87 170 -159 132
+    -136 149 -164 133 -230 -10 -42 -50 -91 -94 -113 -87 -44 -141 -18 -295 141
+    -120 125 -155 177 -155 229 0 38 21 90 46 112 62 55 129 62 195 20z m235 -634
+    c51 -47 84 -105 109 -191 18 -63 15 -77 -20 -77 -20 0 -24 7 -30 43 -13 79
+    -45 165 -79 216 -19 28 -33 51 -30 51 2 0 25 -19 50 -42z m-159 -14 c25 -14
+    43 -27 41 -29 -2 -2 -21 0 -43 5 -116 27 -180 -54 -136 -170 25 -65 24 -60 7
+    -60 -20 0 -68 75 -81 128 -15 57 -5 99 30 130 38 33 123 31 182 -4z m-4027
+    -344 l0 -50 -110 0 -110 0 0 -134 0 -134 -147 -4 c-133 -3 -152 -6 -190 -28
+    -57 -32 -83 -85 -83 -171 0 -45 6 -77 20 -104 11 -21 18 -41 15 -43 -12 -12
+    -83 79 -95 122 -17 63 -8 148 22 192 41 61 84 74 246 74 l142 0 0 135 0 134
+    108 3 107 3 3 28 c3 24 8 27 38 27 l34 0 0 -50z m4460 0 l0 -50 -70 0 -70 0 0
+    -430 0 -430 -60 0 c-53 0 -60 2 -60 20 0 15 7 20 25 20 l25 0 0 430 0 430 70
+    0 70 0 0 30 c0 28 3 30 35 30 l35 0 0 -50z m-6750 -14 c0 -29 -16 -36 -81 -36
+    -62 0 -69 2 -69 20 0 18 7 20 75 20 41 0 75 -2 75 -4z m640 -16 c0 -19 -7 -20
+    -92 -20 -89 0 -91 -1 -74 -19 32 -36 56 -118 56 -194 0 -59 -5 -83 -30 -135
+    -30 -64 -122 -165 -162 -177 -16 -6 -2 -24 95 -125 63 -65 123 -129 132 -143
+    16 -25 16 -27 -17 -56 -41 -37 -53 -38 -74 -6 -16 25 -16 27 11 55 l28 29 -38
+    48 c-21 26 -79 88 -128 137 l-90 90 39 30 c68 53 111 103 140 163 25 49 29 70
+    29 139 0 72 -4 89 -32 143 l-32 61 120 0 c112 0 119 -1 119 -20z m1260 0 c0
+    -20 -7 -20 -415 -20 l-415 0 0 -93 0 -93 -50 -52 c-108 -112 -104 -272 9 -395
+    l41 -44 0 -462 c0 -440 1 -464 21 -523 50 -151 173 -251 335 -273 161 -21 341
+    80 412 233 25 54 27 68 32 252 6 207 12 230 62 277 12 12 36 26 51 32 20 8
+    525 11 1648 11 l1619 0 0 135 0 135 -40 0 c-33 0 -40 3 -40 20 0 15 7 20 25
+    20 l25 0 0 430 0 430 119 0 119 0 4 -232 c3 -233 3 -233 31 -291 48 -98 147
+    -141 264 -117 48 10 66 21 104 59 29 28 51 61 58 86 6 24 11 132 11 268 l0
+    227 85 0 c78 0 85 -2 85 -20 0 -17 -7 -20 -50 -20 l-49 0 -3 -243 c-3 -238 -4
+    -244 -29 -292 -35 -69 -99 -108 -185 -113 -82 -5 -123 3 -168 33 -20 14 -39
+    25 -41 25 -3 0 -5 -121 -5 -270 l0 -270 575 0 c625 0 613 1 667 -56 42 -46 48
+    -75 48 -247 0 -191 -20 -298 -75 -412 -93 -195 -269 -338 -480 -392 -66 -17
+    -199 -18 -2505 -18 l-2435 0 -78 23 c-246 71 -427 243 -505 479 -27 82 -27
+    100 -41 841 -1 49 -3 52 -26 52 -18 0 -25 5 -25 20 0 15 7 20 25 20 l25 0 0
+    430 0 430 580 0 c573 0 580 0 580 -20z m1130 0 c0 -20 -7 -20 -280 -20 -273 0
+    -280 0 -280 20 0 20 7 20 280 20 273 0 280 0 280 -20z m340 0 c0 -17 -8 -19
+    -87 -22 l-88 -3 40 -23 c56 -33 78 -66 83 -129 4 -44 0 -59 -20 -91 -14 -20
+    -42 -46 -62 -57 l-36 -20 0 -267 0 -268 -60 0 c-53 0 -60 2 -60 20 0 15 7 20
+    25 20 l25 0 0 430 0 430 120 0 c113 0 120 -1 120 -20z m458 3 c-3 -16 -19 -18
+    -146 -21 l-142 -3 0 -197 c0 -108 4 -213 10 -231 5 -19 8 -36 6 -39 -8 -8 -44
+    23 -62 52 -17 27 -19 57 -22 244 l-4 212 182 0 c167 0 181 -1 178 -17z m342
+    -3 c0 -18 -7 -20 -85 -20 l-85 0 0 -430 0 -430 -65 0 c-58 0 -65 2 -65 19 0
+    14 8 21 28 23 l27 3 3 428 2 427 120 0 c113 0 120 -1 120 -20z m504 4 c3 -9 6
+    -18 6 -20 0 -2 -76 -4 -170 -4 l-170 0 0 -430 0 -430 -60 0 c-53 0 -60 2 -60
+    20 0 15 7 20 25 20 l25 0 0 430 0 430 199 0 c172 0 200 -2 205 -16z m446 -4
+    c0 -19 -7 -20 -139 -20 l-139 0 23 -67 c13 -38 26 -93 30 -124 9 -70 -4 -99
+    -44 -99 -38 0 -40 4 -28 56 13 54 -3 163 -33 231 l-19 43 175 0 c167 0 174 -1
+    174 -20z m710 0 c0 -19 -7 -20 -101 -20 l-101 0 4 -227 c2 -160 7 -235 16
+    -250 15 -27 5 -29 -26 -7 -48 33 -52 57 -52 299 l0 225 130 0 c123 0 130 -1
+    130 -20z m610 0 c0 -18 -7 -20 -85 -20 l-85 0 0 -430 0 -430 -65 0 c-58 0 -65
+    2 -65 20 0 16 7 20 30 20 l30 0 0 430 0 430 120 0 c113 0 120 -1 120 -20z
+    m-6171 -4 c15 -8 33 -21 40 -30 11 -13 8 -14 -24 -5 -78 22 -150 -32 -143
+    -106 3 -22 9 -49 13 -60 9 -19 8 -19 -15 -4 -43 29 -65 67 -65 116 0 38 5 49
+    33 74 27 24 41 29 83 29 27 0 62 -6 78 -14z m2761 -136 c0 -29 -4 -40 -15 -40
+    -17 0 -19 18 -5 54 14 37 20 32 20 -14z m-1530 -135 c20 -24 6 -28 -15 -5 -10
+    11 -13 20 -8 20 6 0 16 -7 23 -15z m-1190 -29 c0 -59 -7 -66 -64 -66 -53 0
+    -156 41 -156 61 0 6 8 5 20 -1 11 -6 44 -12 72 -13 51 -2 53 -1 56 26 3 24 8
+    27 38 27 32 0 34 -2 34 -34z m1035 15 c22 -10 46 -25 52 -33 11 -13 7 -13 -43
+    -1 -35 9 -64 11 -75 6 -17 -7 -12 -19 56 -120 76 -115 82 -127 65 -138 -8 -5
+    -210 283 -210 300 0 13 119 3 155 -14z m3275 -23 c0 -14 -27 -9 -41 8 -10 13
+    -10 17 2 25 13 8 39 -13 39 -33z m-1590 12 c0 -18 -7 -20 -84 -20 -115 0 -185
+    -15 -216 -45 -23 -23 -25 -33 -25 -113 0 -76 4 -94 29 -142 16 -30 63 -90 104
+    -133 l76 -77 -34 -35 c-39 -40 -46 -42 -79 -14 l-24 20 31 32 c18 18 32 35 32
+    38 0 2 -31 36 -69 75 -88 90 -130 171 -137 263 -4 51 -1 74 13 101 31 59 67
+    70 236 70 140 0 147 -1 147 -20z m-1896 -44 c14 -23 14 -28 -4 -68 -25 -56
+    -25 -123 0 -173 26 -50 26 -50 -9 -26 -83 59 -102 178 -43 269 19 29 36 28 56
+    -2z m3986 -76 c0 -19 -7 -20 -152 -20 -133 0 -157 -3 -195 -21 l-43 -21 17
+    -30 c37 -62 146 -189 211 -244 37 -32 69 -59 71 -61 7 -4 -63 -83 -73 -83 -6
+    0 -22 9 -36 19 l-25 20 33 40 33 41 -86 82 c-75 70 -215 240 -215 260 0 3 13
+    9 30 13 16 4 32 11 35 16 4 5 93 9 201 9 187 0 194 -1 194 -20z m-2995 -85
+    c44 -43 30 -149 -27 -212 -27 -29 -18 -51 49 -124 l56 -60 -30 -37 c-35 -43
+    -62 -51 -87 -23 -18 19 -17 21 18 64 l36 44 -30 22 c-17 12 -46 46 -66 75
+    l-35 54 34 46 c40 51 52 92 43 142 -8 41 5 44 39 9z m1701 -78 c-5 -29 -12
+    -36 -45 -45 -48 -15 -154 -15 -203 -1 -21 5 -50 21 -65 35 l-28 24 30 -11 c17
+    -6 64 -12 106 -12 66 -1 85 4 135 29 33 16 63 26 68 23 5 -4 6 -23 2 -42z
+    m-3631 -11 l30 -24 -40 -8 c-60 -12 -128 -8 -163 10 -52 27 -49 37 10 30 29
+    -3 64 -1 78 5 38 15 52 13 85 -13z m1365 -70 c0 -21 -90 -94 -136 -110 -60
+    -20 -167 -21 -226 -1 -24 9 -60 29 -79 45 l-34 30 50 -22 c35 -15 72 -21 120
+    -22 89 -1 168 34 222 100 l37 44 23 -27 c12 -16 22 -32 23 -37z m193 -96 c49
+    -9 79 -9 118 -1 29 6 53 10 54 9 7 -8 25 -48 25 -54 0 -3 -44 -4 -97 -2 -81 3
+    -107 9 -149 30 -27 15 -57 34 -65 44 -13 16 -12 16 17 1 17 -9 61 -21 97 -27z"/>
+    <path  d="M2420 8690 c-188 -40 -332 -234 -318 -430 l3 -45 400 0 400 0 3 64
+    c8 169 -99 332 -256 391 -62 24 -169 33 -232 20z"/>
+    <path d="M7425 8363 c-88 -4 -109 -12 -98 -40 4 -10 43 -13 179 -13 l174 0 0
+    -56 c0 -54 -1 -56 -22 -49 -129 40 -176 41 -237 4 -69 -42 -90 -160 -41 -229
+    44 -61 147 -61 244 0 26 17 48 30 50 30 2 0 6 -36 8 -81 5 -81 16 -103 45 -92
+    10 4 13 53 13 239 l0 234 25 0 c33 0 45 28 20 46 -19 14 -118 16 -360 7z m166
+    -198 c24 -9 54 -25 66 -37 l23 -22 -32 -33 c-17 -18 -36 -33 -40 -33 -9 0 -88
+    118 -88 132 0 12 22 10 71 -7z m-87 -82 c25 -36 43 -70 41 -74 -7 -11 -70 -20
+    -89 -13 -21 8 -46 55 -46 86 0 25 25 68 40 68 5 0 30 -30 54 -67z"/>
+    <path  d="M8138 8359 c-24 -13 -23 -36 1 -49 11 -5 67 -10 124 -10 l105 0 4
+    -56 c1 -31 1 -57 -1 -59 -2 -3 -19 2 -38 10 -46 19 -106 19 -144 -1 -30 -15
+    -68 -80 -69 -117 0 -38 29 -76 69 -88 40 -12 55 -7 183 59 4 2 9 -48 10 -110
+    3 -105 4 -113 23 -113 19 0 20 8 23 126 l3 126 35 16 c40 20 67 21 96 6 16 -9
+    19 -19 18 -62 -3 -73 -2 -77 20 -77 25 0 40 35 40 91 0 49 -20 90 -53 108 -26
+    14 -103 11 -140 -4 -16 -7 -18 -1 -15 71 l3 79 135 5 135 5 0 25 0 25 -275 2
+    c-175 2 -281 -1 -292 -8z m182 -224 c17 -9 30 -19 30 -23 0 -14 -101 -62 -130
+    -62 -43 0 -45 41 -4 78 29 26 63 28 104 7z"/>
+    <path d="M6588 8353 c-20 -5 -29 -25 -18 -43 6 -9 27 -13 68 -11 51 2 64 -2
+    88 -23 28 -24 28 -26 14 -53 -9 -16 -38 -39 -70 -56 -42 -21 -55 -33 -55 -50
+    0 -20 5 -22 67 -25 56 -2 70 -7 92 -29 35 -35 34 -76 -3 -114 -24 -23 -38 -29
+    -75 -29 -39 0 -48 4 -74 36 -33 40 -65 43 -70 6 -5 -31 53 -87 105 -102 92
+    -28 183 28 202 124 5 24 14 31 55 43 26 8 49 13 51 11 2 -2 7 -50 12 -108 8
+    -103 8 -105 33 -105 l25 0 -4 237 -3 237 53 3 c50 3 54 5 54 28 l0 25 -129 3
+    c-138 3 -164 -4 -145 -39 7 -15 21 -19 59 -19 l50 0 0 -94 0 -94 -47 -16 c-67
+    -23 -85 -20 -121 17 l-32 33 20 39 c51 100 -6 176 -130 174 -30 -1 -62 -3 -72
+    -6z"/>
+    <path d="M4357 2583 c-4 -3 -7 -43 -7 -88 0 -99 -27 -210 -75 -311 -19 -40
+    -35 -75 -35 -78 0 -4 933 -5 2073 -4 l2072 3 58 25 c159 69 248 199 251 370
+    l1 85 -2166 3 c-1191 1 -2169 -1 -2172 -5z"/>
+    </g>
+    </svg>
+    
+    </div>
+    शब्दलेखन तपासक
+  </h1>
+  
+<!-- header navbar  area -->
+  <div  class="wrap" >
+
+    {%if word %}
+    <select onclick="changeText()" id="predict" name="words">
+
+      {% for i in word: %}
+      <option selected value={{i}}>{{i}}</option>
+
+      {%endfor%}
+
+    </select>
+    {%endif%}
+    <!-- <button id="copy-btn" onclick="copyText()">Copy</button>
+    <button id="paste-btn" onclick="pasteText()">Paste</button> -->
+    <input type="file" id="file-input">
+    <button id="upload-btn" onclick="uploadFile()">Upload</button>
+    <!-- <button form="a-form" type="submit">Submit</button> -->
+    <button form="a-form"
+      style="font-weight:800;margin-top:10px;padding:10px 20px;border-radius: 20px;background-color: rgb(77, 232, 123);"
+      type="submit">Submit</button>
+
+      <button   onclick="gfg_Run()" >Punctuation</button>
+    <button id="Show_add" form="Add_dic" type="submit">&#9960;</button>
+  
+    <form id="Add_dic"
+      style="width:200px;padding:10px;color: white;font-size:bold; border-radius: 20px;margin-top: 20px;"
+      action="http://127.0.0.1:5000/add_to_dict" method="post">
+      <label for="">Add to Dictionary</label>
+      <input type="text" id='Add_D' name="Add_D">
+      {%if boll==0%}
+      <span style=" font-weight:800; margin-top:10px;color: rgb(231, 3, 3);">&times;Sorry try again</span>
+      {%endif%}
+      {%if boll==1%}
+      <span style="font-weight:800; margin-top:10px;color: green;">&#9745;Added Successfully</span>
+      {%endif%}
+
+    </form>
+    <!-- word predict -->
+    <!-- <hr> -->
+   
+  
+   
+  </div>
+  <!-- header navbar area ends here -->
+
+  
+
+
+
+  <!-- Text Typing Area -->
+  <form   id="a-form" action="http://127.0.0.1:5000/text_parse" method="post">
+
+
+    <textarea   id="editor" name="Word">
+
+
+  </textarea>
+  
+
+
+
+
+  </form>
+  <br>
+  <div  id="show">
+    <label style="font-weight: 800;color: rgb(53, 87, 2);opacity: 0.7;" for="">Suggested words</label>
+ </div>
+
+
+
+
+
+  <!-- predict box and Rules Box -->
+  <hr>
+  <div style="width:100%;display: flex;justify-content: space-evenly;flex-wrap: wrap;">
+    
+
+    <form id="word_predict"
+      style="width:400px;height:200px;padding:10px;color: white;font-size:bold; border-radius: 20px;margin:20px 0px;"
+      action="http://127.0.0.1:5000/foo" method="post">
+      <label style="font-size: 30px; font-weight: 800;" for="">Rules</label>
+      <input style="padding: 12px; border-radius: 10px;" id="Rules" type="text" name="Rules">
+      <button
+        style="font-weight:800;margin-top:10px;padding:10px 20px;border-radius: 20px;background-color: rgb(77, 232, 123);"
+        type="submit">Submit</button>
+      {%if Rule%}
+      <select id="Rules_options" onclick="For_Rules()" style="font-weight:1000;font-size:16px;padding: 10px; border-radius: 10px; margin-top: 20px;"   name="words">
+      <optgroup label=" Correct_Rules">
+      {%for i in Rule['Correct_Rules']%}
+      <option style="font-weight:1000;font-size:16px;text-align:center; color: green;" value={{i}}>{{i}}</option>
+      {%endfor%}
+    </optgroup>
+    <optgroup label=" InCorrect_Rules">
+      {%for i in Rule['Incorrect_Rules']%}
+      <option style="font-weight:1000;font-size:16px;text-align:center; color: rgb(248, 17, 36);" value={{i}}>{{i}}</option>
+      {%endfor%}
+    </optgroup>
+    <optgroup label=" Suggessions">
+      {%for i in Rule['Spell']%}
+      <option style="font-weight:1000;font-size:16px;text-align:center; " value={{i}}>{{i}}</option>
+      {%endfor%}
+    </optgroup>
+      
+      
+
+    
+
+
+
+    </select>
+      
+      {%endif%}
+
+    </form>
+    <div class="second" >
+      <h1 style="font-size:45px; color:white;text-align: center;">Rulebased learning</h1>
+      <div  id="text2" >
+        
+        {% for i in errorD%}
+             
+         <select style="font-weight:1000;font-size:16px ; border: 2px solid white; width: auto; appearance: none;"  name="" id="" >
+         <option value={{i[0]}}> {{i[0]}}</option>
+         <optgroup style="color: black;" label="Corrected Rules">
+         {% for k in i[1]['Correct_Rules'] %}
+               <option style="color: rgb(12, 226, 91); font-weight:500;font-size:16px ;text-align:center;" value={{k}}>{{k}}</option>
+         {%endfor%}
+        </optgroup>
+         <optgroup style="color: black;" label="InCorrected Rules">
+         {% for n in i[1]['Incorrect_Rules'] %}
+         <option  style="color: red; font-weight:1000;font-size:16px ;text-align:center; " value={{n}} >{{n}}</option>
+         {%endfor%}
+        </optgroup>
+        
+      </select>
+        {%endfor%}
+
+        
+      {% set limit=0 %}
+       
+
+
+      </div>
+    </div>
+  </div>
+  <!-- predict box and Rules box end -->
+
+
+
+
+
+
+
+  <!-- Error coorection and Detection Boxes -->
+  <div class="box_wrap">
+    <div class="first">
+      <h1 style="font-size:45px; color:white; text-align: center;">Error  Detection</h1>
+
+      <div id="text1" >
+       
+        {% for i in actualD%}
+             
+         {%if(i[0]==0)%}
+         <span >{{i[1]}}</span>
+         {%endif%}
+         {%if(i[0]==1)%}
+         <select style="color:red;font-weight:1000;font-size:16px ; border: 2px solid white; width: auto; appearance: none;" name="correct" id=""> 
+         <optgroup style="color: black;" label="InCorrected Word">
+          <option  style="color: red; font-weight:1000;font-size:16px ;text-align:center; " value={{i[1]}} >{{i[1]}}</option>
+         </optgroup>
+          <optgroup style="color: black;" label="Suggested Words">
+          {%for x in i[2]['Spell']%}
+          <option  style="color: rgb(43, 255, 0); font-weight:1000;font-size:16px ;text-align:center; " value={{x}} >{{x}}</option>
+          {%endfor%}
+          </optgroup>
+        </select>
+         {%endif%}
+         
+
+
+        {%endfor%}
+
+        
+     
+
+
+      </div>
+    </div>
+    <!-- correction box -->
+    <hr style=" margin-left: 30px;margin-right: 55px;">
+    <div class="first" >
+      <h1 style="font-size:45px; color:white; text-align: center;">Error correction</h1>
+
+      <div id="text1" >
+
+        {% for i in actualD%}
+             
+        {%if(i[0]==0)%}
+        <span >{{i[1]}}</span>
+        {%endif%}
+        {%if(i[0]==1)%}
+        <select style="color:rgb(33, 247, 10);font-weight:1000;font-size:16px ; border: 2px solid white; width: 100px; appearance: none;" name="correct" id=""> 
+        
+         <optgroup style="color: black;" label="Suggested Words">
+         {%for x in i[2]['Spell']%}
+         <option  style="color: rgb(43, 255, 0); font-weight:1000;font-size:16px ;text-align:center; " value={{x}} >{{x}}</option>
+         {%endfor%}
+         </optgroup>
+
+         <!-- <optgroup style="color: black;" label="InCorrected Word">
+          <option  style="color: red; font-weight:1000;font-size:16px ;text-align:center; " value={{i[1]}} >{{i[1]}}</option>
+         </optgroup> -->
+       </select>
+        {%endif%}
+        
+
+
+       {%endfor%}
+
+        
+      {% set limit=0 %}
+        
+
+
+
+      </div>
+    </div>
+  </div> -->
+ <!-- Error coorection and Detection Boxes  end -->
+
+
+
+
+ <script rel="stylesheet" src="{{url_for('static',filename='index.js')}}">
+  </script>
+ 
+</body>
+
+</html>

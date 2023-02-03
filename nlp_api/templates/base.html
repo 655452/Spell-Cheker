@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="http://127.0.0.1:5000/foo"  method="post">
+        Enter the word 
+        <input id="in" type="text" type="submit" name="Word">
+        <br><br>
+        <button type="submit">Check Suggestions</button>
+    </form><br>
+    {{word['Correct_Rules']}}
+    {% block suggestions %}
+    
+    {% endblock %}
+</body>
+
+</html>

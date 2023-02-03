@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block suggestions %}
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .dropbtn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: auto;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #3e8e41;
+    }
+
+    ul li {
+      background: #cce5ff;
+      margin: 2px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="dropdown">
+    <button class="dropbtn">Suggested Words</button>
+    <div class="dropdown-content">
+      <ul style="list-style:none;">
+        {% for word in finals %}
+        <center>
+          <li>{{word}}</li>
+        </center>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Word is correct according to </button>
+    <div class="dropdown-content">
+      <ul style="list-style:none;">
+        {% for i in corrects %}
+        <center>
+          <li>{{i}}</li>
+        </center>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <button class="dropbtn">Word is incorrect according to </button>
+    <div class="dropdown-content">
+      <ul style="list-style:none;">
+        {% for i in incorrects %}
+        <center>
+          <li>{{i}}</li>
+        </center>
+        {% endfor %}
+        <ul>
+    </div>
+  </div>
+
+</body>
+
+</html>
+{% endblock %}
